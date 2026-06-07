@@ -1,105 +1,92 @@
 # Diabetic Retinopathy Detection & Risk Assessment System
 
-AI-powered healthcare application for automated diabetic retinopathy screening using retinal fundus images, integrated with blood report analysis, symptom-based assessment, and explainable AI visualizations.
+An AI-powered healthcare screening application that analyzes retinal fundus images for diabetic retinopathy detection, integrates blood report analysis through OCR, performs symptom-based risk assessment, and provides visual explanations using Grad-CAM.
 
 ## Live Demo
 
-**Hugging Face Space**
+🔗 **Hugging Face Deployment**
 https://huggingface.co/spaces/Srindhi/dr-retinopathy-ai
 
-**GitHub Repository**
+🔗 **GitHub Repository**
 https://github.com/davulurisrinidhi1/dr-retinopathy-ai
 
 ---
 
-## Overview
+## Project Overview
 
-Diabetic Retinopathy (DR) is one of the leading causes of preventable blindness among diabetic patients. Early diagnosis is essential for timely treatment and reducing vision loss.
+Diabetic Retinopathy (DR) is a diabetes-related eye disease that can lead to severe vision impairment if not detected early.
 
-This project combines Deep Learning, Computer Vision, OCR, and Explainable AI techniques to assist in diabetic retinopathy screening. The system analyzes retinal fundus images, evaluates clinical indicators from blood reports, and provides visual explanations for model predictions.
+This project combines Deep Learning, Computer Vision, OCR, and Explainable AI techniques to build an interactive screening platform capable of:
+
+* Analyzing retinal fundus images
+* Assessing diabetic retinopathy severity
+* Extracting HbA1c values from blood reports
+* Evaluating patient symptoms
+* Providing visual explanations for model predictions
+
+The system is designed as a proof-of-concept healthcare application demonstrating the practical integration of AI technologies in medical image analysis.
 
 ---
 
-## Features
+## Key Features
 
-### Retinal Image Classification
+### Retinal Fundus Image Analysis
 
-* Automated diabetic retinopathy severity prediction
-* Multi-class DR grading
-* Retinal image preprocessing using CLAHE enhancement
-* Deep learning-based feature extraction
+* Deep learning-based retinal image classification
+* Multi-level diabetic retinopathy assessment
+* Automated image preprocessing pipeline
+* Instant prediction through a web interface
+
+### Image Enhancement
+
+* CLAHE (Contrast Limited Adaptive Histogram Equalization)
+* Improved retinal feature visibility
+* Enhanced image quality before model inference
 
 ### Explainable AI
 
-* Grad-CAM heatmap generation
-* Visual interpretation of prediction results
-* Identification of influential retinal regions
+* Grad-CAM visualization
+* Highlights image regions influencing predictions
+* Improves model interpretability and transparency
 
 ### Blood Report Analysis
 
 * OCR-based extraction of HbA1c values
-* Diabetes risk assessment
-* Clinical parameter interpretation
+* Automatic clinical interpretation
+* Additional diabetes risk insights
 
-### Symptom-Based Assessment
+### Symptom Assessment
 
-* Patient symptom evaluation
-* Risk indication support
-* Additional screening insights
+* Symptom-driven risk evaluation
+* Supportive healthcare screening information
 
 ### Interactive Web Application
 
-* Built using Streamlit
-* Upload retinal images directly through the browser
-* Instant predictions and visual outputs
+* Built with Streamlit
+* Easy image upload and prediction workflow
+* User-friendly interface
 
 ---
 
-## Model Details
+## System Architecture
 
-| Component           | Technology         |
-| ------------------- | ------------------ |
-| Deep Learning Model | MobileNetV2        |
-| Image Enhancement   | CLAHE              |
-| Explainability      | Grad-CAM           |
-| OCR Engine          | EasyOCR            |
-| Framework           | TensorFlow / Keras |
-| Frontend            | Streamlit          |
-
----
-
-## Dataset
-
-The model was trained using the **APTOS 2019 Blindness Detection Dataset**, consisting of retinal fundus images categorized across multiple diabetic retinopathy severity levels.
-
-The dataset includes:
-
-* No DR
-* Mild DR
-* Moderate DR
-* Severe DR
-* Proliferative DR
+1. User uploads a retinal fundus image.
+2. Image preprocessing is applied using CLAHE.
+3. MobileNetV2-based model performs prediction.
+4. Grad-CAM generates visual explanations.
+5. Optional blood report analysis extracts HbA1c values.
+6. Symptom inputs provide additional risk assessment.
+7. Results are displayed through the Streamlit interface.
 
 ---
 
-## Performance
+## Technologies Used
 
-| Metric                         | Score  |
-| ------------------------------ | ------ |
-| Accuracy                       | 85.27% |
-| Quadratic Weighted Kappa (QWK) | 0.887  |
-
-These results indicate strong agreement between model predictions and clinical grading standards.
-
----
-
-## Technology Stack
-
-### Languages
+### Programming Language
 
 * Python
 
-### Machine Learning & AI
+### Machine Learning & Deep Learning
 
 * TensorFlow
 * Keras
@@ -111,19 +98,30 @@ These results indicate strong agreement between model predictions and clinical g
 * CLAHE
 * Grad-CAM
 
-### OCR & Data Processing
+### OCR
 
 * EasyOCR
+
+### Data Processing
+
 * NumPy
 * Pandas
 
-### Web Application
+### Web Framework
 
 * Streamlit
 
 ### Visualization
 
 * Matplotlib
+
+---
+
+## Dataset
+
+The model was developed using retinal fundus image datasets inspired by the APTOS 2019 Blindness Detection challenge.
+
+The project focuses on demonstrating an end-to-end diabetic retinopathy screening workflow rather than producing a clinically validated diagnostic system.
 
 ---
 
@@ -164,7 +162,7 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Run locally:
+Run the application:
 
 ```bash
 streamlit run app/app.py
@@ -172,19 +170,20 @@ streamlit run app/app.py
 
 ---
 
-## Future Improvements
+## Future Enhancements
 
-* Ensemble-based prediction models
-* PDF clinical report generation
+* Improved model accuracy using larger datasets
+* Ensemble learning approaches
+* PDF medical report generation
 * Multi-disease retinal screening
-* Cloud-based patient management
-* Enhanced model accuracy through larger datasets
+* Cloud-based patient record integration
+* Advanced clinical decision-support features
 
 ---
 
 ## Disclaimer
 
-This project is intended for educational, research, and screening purposes only. It should not be considered a substitute for professional medical diagnosis, treatment, or clinical decision-making.
+This project is intended for educational, research, and demonstration purposes only. It should not be used as a substitute for professional medical diagnosis, treatment, or clinical decision-making.
 
 ---
 
